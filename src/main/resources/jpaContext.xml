@@ -22,7 +22,7 @@
 		<property name="jpaPropertyMap">
 			<map>
 				<entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"></entry>
-				<entry key="hibernate.hbm2ddl.auto" value="none"></entry>
+				<entry key="hibernate.hbm2ddl.auto" value="create"></entry>
 				<entry key="hibernate.format_sql" value="true"></entry>
 			</map>
 		</property>
