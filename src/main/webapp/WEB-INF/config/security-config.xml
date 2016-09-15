@@ -14,6 +14,7 @@
 
 	<authentication-manager>
 		<authentication-provider>
+			<password-encoder hash="md5" />
 			<jdbc-user-service data-source-ref="dataSource"/>   <!-- // spring gives a simple way to access jdbc based userDetailsService -->
 		</authentication-provider>
 	</authentication-manager>
