@@ -14,10 +14,32 @@
 
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="bryan" password="secret" authorities="ROLE_USER"/>
-			</user-service>
+			<jdbc-user-service data-source-ref="dataSource"/>   <!-- // spring gives a simple way to access jdbc based userDetailsService -->
 		</authentication-provider>
 	</authentication-manager>
+
+	
+<!-- 	<authentication-manager>
+		<authentication-provider user-service-ref="userDetailsService" />
+	</authentication-manager>
+		
+	<beans:bean id="userDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">   // jdbc way to provide userDetailsService
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+	</beans:bean> -->
+			
+<!-- 	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="bryan" password="secret" authorities="ROLE_USER"/>  // original memory authentication
+			</user-service>
+		</authentication-provider>
+	</authentication-manager> -->
+	
+<!-- 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">     // just use the dataSource defined in jpaContext.xml
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"></beans:property>
+		<beans:property name="url" value="jdbc:mysql://localhost:3306/fitnessTracker?autoReconnect=true"></beans:property>
+		<beans:property name="username" value="dbuser"></beans:property>
+		<beans:property name="password" value="dbpassword"></beans:property>
+	</beans:bean> -->
 	
 </beans:beans>
