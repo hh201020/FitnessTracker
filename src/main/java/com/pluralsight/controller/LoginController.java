@@ -21,4 +21,11 @@ public class LoginController {
 		System.out.println("logged in");
 //		return "index";
 	}
+	
+	@RequestMapping(value="/loginFailed", method=RequestMethod.GET)
+	public String loginFailed(ModelMap model) {
+		System.out.println("log in failed");
+		model.addAttribute("error", "true");
+		return "login";
+	}
 }

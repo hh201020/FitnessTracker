@@ -10,14 +10,15 @@
 
 	<http auto-config="true"  use-expressions="true">
 		<intercept-url pattern="/login.html" access="permitAll" />
+		<intercept-url pattern="/loginFailed.html"  access="permitAll"/>
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
 <!-- 	<http-basic/> 
 		<form-login login-page="/login.html" authentication-failure-url="/loginFailed.html"/>  -->
-		<form-login login-page="/login"
+		<form-login login-page="/login.html"
 					username-parameter="j_username" 
 					password-parameter="j_password" 
 					login-processing-url="/j_spring_security_check" 
-					authentication-failure-url="/login?login_error=1" 
+					authentication-failure-url="/loginFailed.html" 
 		/>
 		<csrf disabled="true"/>
 	</http>
