@@ -14,13 +14,20 @@ public class LoginController {
 		System.out.println("in login");
 		return "login";
 	}
-	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public void loginPost(ModelMap model){
+
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(ModelMap model){
 		
-		System.out.println("logged in");
-//		return "index";
+		System.out.println("logout");
+		return "logout";
 	}
+	
+//	@RequestMapping(value="/login", method=RequestMethod.POST)
+//	public void loginPost(ModelMap model){
+//		
+//		System.out.println("logged in");
+//		return "index";
+//	}
 	
 	@RequestMapping(value="/loginFailed", method=RequestMethod.GET)
 	public String loginFailed(ModelMap model) {
