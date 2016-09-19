@@ -14,5 +14,11 @@ public class LoginController {
 		System.out.println("in login");
 		return "login";
 	}
-
+	
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public void loginPost(ModelMap model){
+		
+		System.out.println("logged in");
+//		return "index";
+	}
 }

@@ -58,7 +58,22 @@ body {
 		</div>
 	</c:if>
 
-	<form action="j_spring_security_check" name="f" method="post">
+<c:if test="${param.error != null}"> 
+	<p>Invalid username / password</p>
+</c:if>
+<c:url var="loginUrl" value="/"/> 
+<form action="${loginUrl}" method="post">
+	<p><label for="username">User:</label></p>
+	<input type="text" id="username" name="username"/> 
+
+	<p><label for="password">Password:</label></p>
+	<input type="password" id="password" name="password"> 
+
+	<div>
+		<input name="submit" type="submit"/>
+	</div>
+</form>
+<!-- 	<form action="j_spring_security_check" name="f" method="post">
 		<table>
 			<tr>
 				<td>User:</td>
@@ -76,7 +91,7 @@ body {
 			</tr>
 		</table>
 	</form>
-
+ -->
 </body>
 </html>
 
