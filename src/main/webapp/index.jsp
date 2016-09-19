@@ -57,7 +57,7 @@
         <a class="btn btn-primary" href="addMinutes.html">
           Add Exercise Minutes ?
         </a>
-        <a class="btn btn-warning" href="logout.html">
+        <a class="btn btn-warning" href="j_spring_security_logout">
           Logout>>
         </a>
         
