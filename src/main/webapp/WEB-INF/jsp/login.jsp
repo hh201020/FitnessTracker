@@ -51,14 +51,14 @@ body {
 </head>
 <body onload='document.f.j_username.focus();'>
 	<h3>Fitness Tracker Custom Login Page</h3>
-	<c:if test="${not empty error} }">
+	<c:if test="${not empty error}">
 		<div class="errorblock">
 			Your login was unsuccessful. <br />
 			Caused: ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message} }
 		</div>
 	</c:if>
 
-<c:if test="${param.error != null}"> 
+<%-- <c:if test="${param.error != null}"> 
 	<p>Invalid username / password</p>
 </c:if>
 <c:url var="loginUrl" value="/"/> 
@@ -72,8 +72,8 @@ body {
 	<div>
 		<input name="submit" type="submit"/>
 	</div>
-</form>
-<!-- 	<form action="j_spring_security_check" name="f" method="post">
+</form> --%>
+	<form action="j_spring_security_check" name="f" method="post">
 		<table>
 			<tr>
 				<td>User:</td>
@@ -91,7 +91,7 @@ body {
 			</tr>
 		</table>
 	</form>
- -->
+
 </body>
 </html>
 
