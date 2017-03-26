@@ -1,4 +1,3 @@
-import org.junit.Test;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -20,7 +19,6 @@ public class PasswordHash extends TestCase {
 		System.out.println(hashedPassword);
 	}
 	
-	@Test
 	public void test() {
 		fail("Not yet implemented");
 	}

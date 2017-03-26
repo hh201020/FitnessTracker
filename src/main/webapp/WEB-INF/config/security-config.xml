@@ -28,13 +28,13 @@
 		<csrf disabled="true"/>
 	</http>
 
-	<authentication-manager>
+<!-- 	<authentication-manager>
 		<authentication-provider>
-			<password-encoder hash="bcrypt" />  <!-- <password-encoder hash="md5" /> -->
-			<jdbc-user-service data-source-ref="dataSource"/>   <!-- // spring gives a simple way to access jdbc based userDetailsService -->
+			<password-encoder hash="bcrypt" />   <password-encoder hash="md5" /> 
+			<jdbc-user-service data-source-ref="dataSource"/>   // spring gives a simple way to access jdbc based userDetailsService 
 		</authentication-provider>
 	</authentication-manager>
-
+ -->
 	
 <!-- 	<authentication-manager>
 		<authentication-provider user-service-ref="userDetailsService" />
@@ -44,13 +44,13 @@
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
 	</beans:bean> -->
 			
-<!-- 	<authentication-manager>
+	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="bryan" password="secret" authorities="ROLE_USER"/>  // original memory authentication
+				<user name="bryan" password="secret" authorities="ROLE_USER"/> 
 			</user-service>
 		</authentication-provider>
-	</authentication-manager> -->
+	</authentication-manager>
 	
 <!-- 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">     // just use the dataSource defined in jpaContext.xml
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"></beans:property>

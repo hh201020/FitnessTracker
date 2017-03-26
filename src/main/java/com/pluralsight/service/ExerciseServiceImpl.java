@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pluralsight.model.Activity;
 import com.pluralsight.model.Exercise;
+import com.pluralsight.model.Goal;
 import com.pluralsight.repository.ExerciseRepository;
 
 @Service("exerciseService")
@@ -16,6 +17,8 @@ public class ExerciseServiceImpl implements ExerciseService {
 
 	@Autowired
 	private ExerciseRepository exerciseRepository;
+	@Autowired
+	private JMSBean jmsBean;
 	
 	public List<Activity> findAllActivities() {
 		List<Activity> activities = new ArrayList<Activity>();
@@ -37,6 +40,11 @@ public class ExerciseServiceImpl implements ExerciseService {
 	@Override
 	@Transactional
 	public Exercise save(Exercise exercise) {
+		try {
+			jmsBean.submit("Set exercise minutes: " + exercise.getMinutes());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		exercise = exerciseRepository.save(exercise);
 		return exercise;
 	}
