@@ -17,6 +17,7 @@ public class JMSBean {
 	ActiveMQConnectionFactory jmsConnectionFactory = new ActiveMQConnectionFactory();
 	
 	public void submit(String message) throws Exception {
+//		jmsConnectionFactory.setBrokerURL("tcp://172.16.190.138:61616");
 		Connection connection = jmsConnectionFactory.createConnection();
 		connection.start();
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
